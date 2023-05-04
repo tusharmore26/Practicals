@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="reg.css">
+    <script>
+      function validateForm() {
+        var firstName = document.forms["myForm"]["firstName"].value;
+        var lastName = document.forms["myForm"]["lastName"].value;
+        var email = document.forms["myForm"]["email"].value;
+        var password = document.forms["myForm"]["password"].value;
+        var confirmPassword = document.forms["myForm"]["mobileno"].value;
+        
+        if (firstName == "") {
+          alert("First name must be filled out");
+          return false;
+        }
+        
+        if (lastName == "") {
+          alert("Last name must be filled out");
+          return false;
+        }
+        
+        if (email == "") {
+          alert("Email must be filled out");
+          return false;
+        }
+        
+        if (password == "") {
+          alert("Password must be filled out");
+          return false;
+        }
+        
+        if (password.length < 6) {
+          alert("Password must be at least 6 characters long");
+          return false;
+        }
+        
+        if (mobileno == "") {
+          alert("Confirm password must be filled out");
+          return false;
+        }
+        
+        if (password != mobileno) {
+          alert("Passwords do not match");
+          return false;
+        }
+        
+        return true;
+      }
+    </script>
+  </head>
+  
+  <body>
+    <h1>Registration Form</h1>
+    <form name="myForm" onsubmit="return validateForm()" method="POST" action="database.php">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName"><br><br>
+      
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName"><br><br>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      
+      <label for="mobileno">Mobile No:</label>
+      <input type="number" id="mobileno" name="mobileno"><br><br>
+      
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>
