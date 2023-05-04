@@ -1,0 +1,8 @@
+<struts>
+    <package name="default" extends="struts-default">
+        <action name="loginAction" class="com.example.LoginAction">
+            <result name="success">welcome.jsp</result>
+            <result name="input">login.jsp</result>
+        </action>
+    </package>
+</struts>
